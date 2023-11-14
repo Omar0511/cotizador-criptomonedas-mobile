@@ -76,7 +76,7 @@ const Formulario =
 
             <Picker
                 selectedValue={criptomoneda}
-                onValueChange={ cripto => obtenerCriptomoneda(moneda) }
+                onValueChange={ cripto => obtenerCriptomoneda(cripto) }
             >
                 <Picker.Item label='- Seleccione -' value="" />
                 {

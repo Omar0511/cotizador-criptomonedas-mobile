@@ -1,6 +1,15 @@
 # Proyecto Cotizador de Criptomonedas
-- Los datos obtenidos se ejecutan desde una API.
-- Creación del proyecto:
+1. Los datos obtenidos se ejecutan desde una API.
+    - [API](https://www.cryptocompare.com/)
+1. Dentro de la página, nos vamos a:
+    1. API
+    1. Documentation
+    1. TopLists
+    1. TopList by Market Cap Full Data
+    1. GET, copiamos la ruta:
+        - [RUTA](https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD)
+
+1. Creación del proyecto:
     - `npx react-native init MiProyecto --version 0.70`
 
 ## Tecnologías
@@ -11,6 +20,8 @@
     - `npm install @react-native-community/picker --save`
     - Si no lo acepta:
     - `npm install @react-native-picker/picker --save`
+1. Axios
+    - `npm i --save axios`
 
 ### Tipografía
 - Google fonts

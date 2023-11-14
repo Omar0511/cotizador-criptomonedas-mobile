@@ -17,6 +17,7 @@ const App = () =>
   (
     <>
       <Header />
+      <Text>HOLA</Text>
     </>
   );
 };

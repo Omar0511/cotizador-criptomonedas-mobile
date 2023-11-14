@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Image,
@@ -7,7 +7,12 @@ import {
 import Header from './components/Header';
 import Formulario from './components/Formulario';
 
-const App = () => {
+const App = () => 
+{
+  const [moneda, guardarMoneda] = useState('');
+  const [criptomoneda, guardarCriptomoneda] = useState('');
+  const [ consultarAPI, guardarConsultarAPI] = useState(false);
+
   return (
     <>
       <Header />
@@ -19,7 +24,11 @@ const App = () => {
 
       <View style={styles.contenido}>
         <Formulario
-
+          moneda={moneda}
+          criptomoneda={criptomoneda}
+          guardarMoneda={guardarMoneda}
+          guardarCriptomoneda={guardarCriptomoneda}
+          guardarConsultarAPI={guardarConsultarAPI}
         />
       </View>
     </>

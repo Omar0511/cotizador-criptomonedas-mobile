@@ -1,12 +1,19 @@
 import { Picker } from '@react-native-picker/picker';
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Text, StyleSheet, View, TouchableHighlight } from 'react-native';
+import { Text, StyleSheet, View, TouchableHighlight, Alert } from 'react-native';
 
-const Formulario = () => 
+const Formulario = 
+(
+    {
+        moneda,
+        criptomoneda,
+        guardarMoneda,
+        guardarCriptomoneda,
+        guardarConsultarAPI,
+    }
+) => 
 {
-    const [moneda, guardarMoneda] = useState('');
-    const [criptomoneda, guardarCriptomoneda] = useState('');
     const [criptomonedas, guardarCriptomonedas] = useState([]);
 
     useEffect(() => {
@@ -26,11 +33,28 @@ const Formulario = () =>
     };
 
     const obtenerCriptomoneda = cripto => {
-        guardarCriptoMoneda(cripto);
+        guardarCriptomoneda(cripto);
     };
 
     const cotizarPrecio = () => {
-        console.log('cotizar');
+        if ( moneda.trim() === '' || criptomoneda.trim() === '')
+        {
+            mostrarAlerta();
+            return;
+        }
+
+        // Cambiar el STATE de consultar API
+        guardarConsultarAPI(true);
+    };
+
+    const mostrarAlerta = () => {
+        Alert.alert(
+            'Error...',
+            'Ambos campos son obligatorio',
+            [
+                { text: 'OK'}
+            ]
+        )
     };
 
     return (

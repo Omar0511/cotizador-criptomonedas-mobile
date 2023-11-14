@@ -1,5 +1,16 @@
 # Proyecto Cotizador de Criptomonedas
-    - Los datos obtenidos se ejecutan desde una API.
+- Los datos obtenidos se ejecutan desde una API.
+- Creación del proyecto:
+    - `npx react-native init MiProyecto --version 0.70`
+
+## Tecnologías
+1. React Native
+1. Google Fonts
+1. Picker
+    - Comando de instalación:
+    - `npm install @react-native-community/picker --save`
+    - Si no lo acepta:
+    - `npm install @react-native-picker/picker --save`
 
 ### Tipografía
 - Google fonts

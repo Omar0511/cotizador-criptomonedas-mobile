@@ -10,11 +10,8 @@ import {
 } from 'react-native';
 import Header from './components/Header';
 
-const App = () => 
-{
-
-  return 
-  (
+const App = () => {
+  return (
     <>
       <Header />
     </>
@@ -24,7 +21,7 @@ const App = () =>
 const styles = StyleSheet.create
 (
   {
-
+    
   }
 );
 

@@ -7,13 +7,12 @@ const Formulario = () =>
 {
     const [moneda, guardarMoneda] = useState('');
     const [criptomoneda, guardarCriptomoneda] = useState('');
-    const [criptomonedas, guardarCriptomonedas] = useState('');
+    const [criptomonedas, guardarCriptomonedas] = useState([]);
 
     useEffect(() => {
         const consultarAPI = async () => {
             const url = 'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD';
             const resultado = await axios.get(url);
-            
             guardarCriptomonedas(resultado.data.Data);
         }
 
@@ -21,8 +20,13 @@ const Formulario = () =>
 
     }, []);
 
+    // Almacena las selecciones del usuario
     const obtenerMoneda = moneda => {
         guardarMoneda(moneda);
+    };
+
+    const obtenerCriptoMoneda = cripto => {
+        guardarCriptoMoneda(cripto);
     };
 
     return (
@@ -42,7 +46,17 @@ const Formulario = () =>
 
             <Text style={styles.label}>Criptomoneda</Text>
 
-            
+            <Picker
+                selectedValue={criptomoneda}
+                onValueChange={ cripto => obtenerCriptocripto(moneda) }
+            >
+                <Picker.Item label='- Seleccione -' value="" />
+                {
+                    criptomonedas.map( cripto => (
+                        <Picker.Item key={cripto.CoinInfo.Id} label={cripto.CoinInfo.FullName} value={cripto.CoinInfo.Name} />
+                    ))
+                }
+            </Picker>
         </View>
     );
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { Text, StyleSheet, View } from 'react-native';
 
 const Cotizacion = (
     {
@@ -14,16 +14,52 @@ const Cotizacion = (
     }
 
     return (
-        <Text>
-            El precio es: {resultado.PRICE}
-        </Text>
+        <View style={styles.resultado}>
+            <Text style={styles.texto}>
+                <Text style={styles.span}> {resultado.PRICE} </Text>
+            </Text>
+
+            <Text style={styles.texto}>
+                Precio más alto del día {' '}
+                <Text style={styles.span}> {resultado.HIGHDAY} </Text>
+            </Text>
+            
+            <Text style={styles.texto}>
+                Precio más bajo del día {' '}
+                <Text style={styles.span}> {resultado.LOWDAY} </Text>
+            </Text>
+
+            <Text style={styles.texto}>
+                Variación últimas 24 horas {' '}
+                <Text style={styles.span}> {resultado.CHANGEPCT24HOUR} %</Text>
+            </Text>
+
+            <Text style={styles.texto}>
+                Última actualización {' '}
+                <Text style={styles.span}> {resultado.LASTUPDATE} </Text>
+            </Text>
+        </View>
     );
 };
 
 const styles = StyleSheet.create
 (
     {
+        resultado: {
 
+        },
+
+        texto: {
+
+        },
+
+        precio: {
+
+        },
+
+        span: {
+
+        },
     }
 );
 
